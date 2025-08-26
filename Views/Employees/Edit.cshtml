@@ -1,0 +1,88 @@
+﻿@model SmartTrack.Models.Employee
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-solar-mustard text-white">
+                    <h2>Edit Employee</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="EmployeeID"/>
+                        @* <div asp-validation-summary="All" class="text-danger"></div>  *@
+                        <div class="row">
+                            <label asp-for="FirstName" class="col-sm-2 col-form-label">First Name </label>
+                            <input asp-for="FirstName" class="form-control" placeholder="Enter first name" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="MiddleName" class="col-sm-2 col-form-label">Middle Name</label>
+                            <input asp-for="MiddleName" class="form-control" placeholder="Enter middle name" />
+
+                        </div>
+
+                        <div class="row">
+                            <label asp-for="LastName" class="col-sm-2 col-form-label">Last Name</label>
+                            <input asp-for="LastName" class="form-control" placeholder="Enter last name" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="EmailAddress" class="col-sm-2 col-form-label">Email Address</label>
+                            <input asp-for="EmailAddress" type="email" class="form-control" placeholder="Enter email" />
+                            <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="PhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                            <input asp-for="PhoneNumber" class="form-control" placeholder="Enter phone number" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="DateofBirth" class="col-sm-2 col-form-label">Date of Birth</label>
+                            <input asp-for="DateofBirth" type="date" class="form-control" />
+                            <span asp-validation-for="DateofBirth" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="Address" class="col-sm-2 col-form-label"></label>
+                            <input asp-for="Address" class="form-control" placeholder="Enter Address" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="Department" class="col-sm-2 col-form-label"></label>
+                            <select asp-for="Department" class="form-select">
+                                <option value="">--Select Department--</option>
+                                <option>IT</option>
+                                <option>Electrical</option>
+                                <option>Mechanical</option>
+                                <option>Research & Development</option>
+                                <option>Human Resources</option>
+                            </select>
+                            <span asp-validation-for="Department" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="Designation" class="col-sm-2 col-form-label"></label>
+                            <input asp-for="Designation" class="form-control" placeholder="Enter email" />
+                            <span asp-validation-for="Designation" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <label asp-for="HireDate" class="col-sm-2 col-form-label">Hire Date</label>
+                            <input asp-for="HireDate" type="date" class="form-control" />
+                            <span asp-validation-for="HireDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input asp-for="IsActive" class="form-check-input" />
+                            <label asp-for="IsActive" class="form-check-label"></label>
+                        </div>
+
+                        <button type="submit" class="btn btn-solar-success">Edit</button>
+                        <a asp-action="Index" class="btn btn-solar-warning">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

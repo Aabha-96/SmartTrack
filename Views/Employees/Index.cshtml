@@ -1,0 +1,97 @@
+﻿
+@model List<Employee>
+
+    <div class="container mt-4 ">
+        
+            <div class=" d-flex justify-content-between align-items-center mb-3 text-white">
+                <h4 class="mb-0 " >Employee Information</h4>
+            <a class="btn btn-solar-success btn-sm mb-2 float-end" asp-controller ="Employees" asp-action="Create">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+            </svg> Create New
+            </a>
+            </div>
+       
+    
+        <div class="card shadow-sm">  
+<div class=" table-responsive mt-4">
+        <table class=" table table-striped table-hover table-bordered align-middle">
+        <thead class="table-dark text-white">
+       <tr>
+           
+                <th>Full Name</th>
+                <th>EmailAddress</th>
+                <th>PhoneNumber</th>
+                <th>Address</th>
+                <th>DateofBirth</th>
+                <th>Department </th>
+                <th>Designation </th>
+                <th>HireDate</th>
+                <th>Status</th>
+                <th class ="text-center">Actions</th>
+
+       </tr>
+
+   </thead>
+        <tbody >
+       @foreach(var entry in Model)
+            {
+                <tr>
+                    <td>@($"{entry.FirstName} {(string.IsNullOrWhiteSpace(entry.MiddleName) ? "":entry.MiddleName  +  "")} {entry.LastName}")</td>
+                    <td class="text-nowrap">@entry.EmailAddress</td>
+                    <td class="text-nowrap text-center">@entry.PhoneNumber</td>
+                    <td>@entry.Address</td>
+                    <td class="text-nowrap">@entry.DateofBirth.ToString("yyyy-MM-dd")</td>
+                    <td>@entry.Department</td>
+                    <td>@entry.Designation</td>
+                    <td class="text-nowrap text-center">@entry.HireDate.ToString("MMM dd, yyyy")</td>
+                    <td>
+                        @if (entry.IsActive)
+                            {
+                                <span class="badge btn btn-solar-active">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge btn btn-solar-Inactive">Inactive</span>
+                            }
+
+                    </td>
+                  <td class=" text-center">
+                  <div class="d-flex gap-3">
+                    <a asp-controller="Employees" asp-action="Edit" asp-route-id="@entry.EmployeeID" title="Edit"
+                               class="btn btn-outline-primary btn-sm text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+                                </svg> 
+                    </a>
+                    <a asp-controller="Employees" asp-action="Delete" asp-route-id="@entry.EmployeeID" title="Delete"
+                               class="btn btn-outline-danger btn-sm text-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
+                                    <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
+                                </svg>
+                        
+                    </a>
+                    </div>
+                  </td>
+                    
+                </tr>
+            }
+        </tbody>
+</table>
+            <!-- Pagination Links -->
+            <nav>
+                <ul class="pagination">
+                    @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { page = i, searchString = ViewBag.SearchString })">@i</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+</div>
+</div> 
+</div>

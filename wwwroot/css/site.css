@@ -1,0 +1,92 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+body {
+    background-color:#073642;
+    color:#eee;
+}
+.table-mustard {
+    background-color: darkgoldenrod;
+    color:#000;
+}
+.table-mustard th,
+.table-mustard td{
+    background-color :darkgoldenrod
+}
+.btn-solar-dark{
+    background-color:teal;
+    color:aliceblue;
+   
+    
+}
+.btn-solar-dark:hover{
+    background-color:cadetblue;
+    color:#fdf6e3;
+}
+.btn-solar-warning {
+    background-color:chocolate;
+    color: aliceblue;
+}
+.btn-solar-warning:hover {
+    background-color: coral;
+    color: #fdf6e3;
+}
+.btn-solar-success {
+    background-color:indianred;
+    color: aliceblue;
+}
+
+ .btn-solar-success:hover {
+        background-color:sienna;
+        color: #fdf6e3;
+    }
+
+.bg-solar-mustard {
+    background-color: darkgoldenrod;
+}
+.bg-solar-teal {
+    background-color:teal;
+}
+.btn-solar-active {
+    background-color: #4A90E2; /* change to preferred color */
+    color: white; /* text color for contrast */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.btn-solar-Inactive {
+    background-color: #BDC3C7; /* change to preferred color */
+    color: white; /* text color for contrast */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn-solar-search {
+    background-color: #F39C12; /* bright, noticeable */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+
+}
