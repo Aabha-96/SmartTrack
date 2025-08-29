@@ -23,6 +23,24 @@ It helps organizations track employees, manage roles, and simplify HR operations
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
+
+###  Home Page
+![Home Page](images/Home.png)
+
+###  Login Page
+![Login Page](images/Login.png)
+
+###  Register Page
+![Register Page](images/Register.png)
+
+###  Create Employee
+![Create New](images/CreateNew.png)
+
+###  Employee Details
+![Employee Details](images/EmployeeDetails.png)
+
+### Create Selection
+![Create Selection](images/CreateNewSelection.png)
 
 
